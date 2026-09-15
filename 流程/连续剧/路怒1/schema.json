@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cartoon-car-accident-episode-v1",
+  "title": "连续剧镜头脚本 schema",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "characters", "shots"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "episode_id": { "type": "string" },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "folder", "assets"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "必须等于 流程/人物/<id> 文件夹名"
+          }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["shot_id", "camera", "subjects", "ai_prompt", "negative_prompt"],
+        "properties": {
+          "shot_id": { "type": "string", "pattern": "^S\\d{2}$" },
+          "camera": {
+            "type": "object",
+            "required": ["shot_size", "angle", "motion"],
+            "properties": {
+              "shot_size": { "enum": ["远景", "全景", "中景", "近景", "特写"] },
+              "angle": { "enum": ["平视", "俯视", "仰视", "过肩"] },
+              "motion": { "enum": ["固定", "推", "拉", "摇", "跟", "切"] }
+            }
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["character", "pose", "view", "expression", "action"],
+              "properties": {
+                "character": { "type": "string" },
+                "pose": { "enum": ["乘坐", "站立"] },
+                "view": { "enum": ["正面", "侧面", "背面"] },
+                "expression": { "type": "string" },
+                "asset_riding": { "type": "string" },
+                "asset_vehicle": { "type": "string" },
+                "asset_expression": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
