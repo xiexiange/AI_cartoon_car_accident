@@ -1,0 +1,19 @@
+Keyframe animation from image 1 (start) to image 2 (end). Agnes mode=keyframes.
+
+PRIMARY MOTION (must be visible every frame — NOT a still morph / NOT a crossfade):
+- All vehicles are DRIVING FORWARD at highway speed.
+- Locked rear following camera stays fixed on the cars (no cut, no pan, no tilt, no rotation).
+- Because cars drive forward, the OUTSIDE WORLD rushes backward past the camera: road surface and dashed lane lines stream toward and under the camera; streetlight poles on the left pass one-by-one from mid-distance toward the camera and exit the bottom/near edge; guardrails and trees scroll backward with strong continuous parallax.
+- Image1→Image2 already differs in streetlight/road positions — animate that parallax fully; do not freeze the background.
+
+SECONDARY ACTION:
+- The white/silver private sedan PARALLEL lane-changes left (sideways translation, body upright, almost no yaw) from its start lane position to its end lane position.
+
+LIGHTS (private sedan only):
+- LEFT rear amber turn signal BLINKING/FLASHING the entire clip (on-off-on-off).
+- RIGHT rear turn signal OFF the entire clip — never amber, never flashing.
+- No brake-light flashing.
+
+HARD LOCKS:
+- Exactly the same vehicles as the two keyframes. Do NOT introduce any new cars.
+- Keep white box truck and red ride-hailing car consistent with keyframes.
